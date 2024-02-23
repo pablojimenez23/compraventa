@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IF-edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Compraventa</title>
+    <link rel="stylesheet" href="./css/styles.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-K3l+kdN5vCXb6qC8jxlfVepCggd3C3oaJMzuMZmw3zxTn0hVDS2+nslF3IMnOg5P" crossorigin="anonymous">
+
+
+</head>
+<body>
+    <header>
+        <div class="nav container">
+            <a href="#" class="logo">Compraventa</a>
+            <a href="login.html" class="register-link">Cerrar sesion</a>
+            <span id="nombreUsuario"></span>
+            <i class="bx bx-shopping-bag" id="cart-icon" data-quantity="0"></i>
+            <div class="cart">
+                <h2 class="cart-tittle">Carro</h2>
+                <div class="cart-content">
+                    <!-- Aquí no hay elementos, el carrito está vacío -->
+                </div>
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">$0</div>
+                </div>
+                <button id="pay-button" type="button" class="btn-buy">Pagar</button>
+                <i class='bx bx-x' id="close-cart"></i>
+            </div>
+        </div>
+    </header>
+    <section class="shop container">
+        <h2 class="section-title">Productos</h2>
+        <div class="shop-content">
+            <div class="product-box">
+                <img 
+                    src="https://blogger.googleusercontent.com/img/a/AVvXsEgrSRvnFjrChUtxbcxF-cSA4nFEqVGtAvmXdjMrwCXv1IpuPX_itGwkP8s0NlE7MkLnpWNBqNh8xOO2mKRCxfG6JsIQrEwiGgPmKl2CXrfHUzQypWV6fxwlyGuL5locjIMtw-IG7zhRlYBpBed1it71hriZPgRdnT96SkouJWiya0I56XQ5MAX1OjpPOAM7" 
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">Mochila Header</h2>
+                <span class="price">$90</span>
+                <i class="bx bx-shopping-bag add-cart" ></i>
+                <div class="rating-container">
+                    <input type="radio" name="rating-product1" id="star1-product1" class="rating-star">
+                    <label for="star1-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star2-product1" class="rating-star">
+                    <label for="star2-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star3-product1" class="rating-star">
+                    <label for="star3-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star4-product1" class="rating-star">
+                    <label for="star4-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star5-product1" class="rating-star">
+                    <label for="star5-product1"><i class='bx bxs-star'></i></label>
+                </div>                
+            </div>
+            <div class="product-box">
+                <img 
+                    src="https://blogger.googleusercontent.com/img/a/AVvXsEjSkMqdFDH4tK9Dzb0xEy_CDBKwuuCSvvq6q4rf7c0MbmAuKbNeePcF0bedYuBDejqzWAqwiLnAFwjXUy6s2q1BpD0BUS_KfbepFgMEggZjtlX4UTdR8mpOd42ouIRa_c2nEAC3k8VSG3Kv63OK2Roh2Da22zrxdnRjQKNO7SyfxB8fBX5b1LEEazfmaeGn" 
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">Gorra verde</h2>
+                <span class="price">$30</span>
+                <i class="bx bx-shopping-bag add-cart" ></i>
+                <div class="rating-container">
+                    <input type="radio" name="rating-product1" id="star1-product1" class="rating-star">
+                    <label for="star1-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star2-product1" class="rating-star">
+                    <label for="star2-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star3-product1" class="rating-star">
+                    <label for="star3-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star4-product1" class="rating-star">
+                    <label for="star4-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star5-product1" class="rating-star">
+                    <label for="star5-product1"><i class='bx bxs-star'></i></label>
+                </div>                
+            </div>
+            <div class="product-box">
+                <img 
+                    src="https://blogger.googleusercontent.com/img/a/AVvXsEh598dgo5-esJks_MsHqcAsApODMXiqddfF2CI4QWDQQx-a-rHnrBfaKlpY3kWyHhgSdvKRyIYyowYuC8Zpcepq_hwd18ucu-j7i8ijJNYLgVwWWd_I-X1yhe_g9V3Z8c0HZNO0qzPmoqdjl0nyjHHsBLmZGDIdJJdvH2QO_SXmxbf9RGp01uZQW9ZiSC1l" 
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">Polera Estampado</h2>
+                <span class="price">$30</span>
+                <i class="bx bx-shopping-bag add-cart" ></i>
+                <div class="rating-container">
+                    <input type="radio" name="rating-product1" id="star1-product1" class="rating-star">
+                    <label for="star1-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star2-product1" class="rating-star">
+                    <label for="star2-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star3-product1" class="rating-star">
+                    <label for="star3-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star4-product1" class="rating-star">
+                    <label for="star4-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star5-product1" class="rating-star">
+                    <label for="star5-product1"><i class='bx bxs-star'></i></label>
+                </div>                
+            </div>
+            <div class="product-box">
+                <img 
+                    src="https://blogger.googleusercontent.com/img/a/AVvXsEg-DBmYfEz3Rx5rpEhyxoW_Pks9B7WXXBSIiISA0rURr5sp2_ffVE4xIVfe5WH-Fdke8IspWMrA9OPBb_FsMxdcUP7Y8J3DRSsxBHZiUXIoWUMUaQXHyl1EQOU7GYEM5qQuB5QXdcjCVONaMiMJiWfAdhrBvA1rp7ea3PkN4B6VnirM67iYlGXQGJ_Ssm47" 
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">Poleron Azul</h2>
+                <span class="price">$50</span>
+                <i class="bx bx-shopping-bag add-cart" ></i>
+                <div class="rating-container">
+                    <input type="radio" name="rating-product1" id="star1-product1" class="rating-star">
+                    <label for="star1-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star2-product1" class="rating-star">
+                    <label for="star2-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star3-product1" class="rating-star">
+                    <label for="star3-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star4-product1" class="rating-star">
+                    <label for="star4-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star5-product1" class="rating-star">
+                    <label for="star5-product1"><i class='bx bxs-star'></i></label>
+                </div>                
+            </div>
+            <div class="product-box">
+                <img 
+                    src="https://blogger.googleusercontent.com/img/a/AVvXsEik5AekNqCEBdvuo0ksz5AATixSV7hoLPGkj4hmfExqG8afpUAgQNm8WufQHfNIqJRH8Ks0tmdohHbKneZVFYVbLhfqYlj2XxHJf2nwvkR2nme3jgmGQ8y7gTdbX7nQYig5-o5UKmS6-VBo4n1z_lRIjMzzbn9X78o0tnIz25DTLHoXnHWaQNrQrkqOEQZp" 
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">Auriculares Bluetoth</h2>
+                <span class="price">$50</span>
+                <i class="bx bx-shopping-bag add-cart" ></i>
+                <div class="rating-container">
+                    <input type="radio" name="rating-product1" id="star1-product1" class="rating-star">
+                    <label for="star1-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star2-product1" class="rating-star">
+                    <label for="star2-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star3-product1" class="rating-star">
+                    <label for="star3-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star4-product1" class="rating-star">
+                    <label for="star4-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star5-product1" class="rating-star">
+                    <label for="star5-product1"><i class='bx bxs-star'></i></label>
+                </div>                
+            </div>
+            <div class="product-box">
+                <img 
+                    src="https://blogger.googleusercontent.com/img/a/AVvXsEhixA-csh77XKONQXlFPl3eCTtopPH0iCWzVeWUro3AiElv39ef5Pq7sCuRTCHSzaGMujteZLUQgqh-QyicVcrtJU2jKzjwZC2gHEyX_6N8LCAUgc1McMVA-gBWOEsINSCbr1J9nFyVSTpdGd20nsVxQog86oBmt4CeJrLLfWgjDFUCUKYCfc8kGIkeKMlx" 
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">Botella Metalica</h2>
+                <span class="price">$50</span>
+                <i class="bx bx-shopping-bag add-cart" ></i>
+                <div class="rating-container">
+                    <input type="radio" name="rating-product1" id="star1-product1" class="rating-star">
+                    <label for="star1-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star2-product1" class="rating-star">
+                    <label for="star2-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star3-product1" class="rating-star">
+                    <label for="star3-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star4-product1" class="rating-star">
+                    <label for="star4-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star5-product1" class="rating-star">
+                    <label for="star5-product1"><i class='bx bxs-star'></i></label>
+                </div>                
+            </div>
+            <div class="product-box">
+                <img 
+                    src="https://blogger.googleusercontent.com/img/a/AVvXsEiHRifDb3RIxUya8NI8v98SoYmOND_48bslG5lj7BZVOWmd5YPgz8Qd-ogS-MX3_9sXDthfyG5NCH7sHKkKXRN5znwogZo-L0PTPPYEZDh07puw7pKd9DMB-UnPplYHSUEgI2Mf9WXoyEapKY3u8NX9rrH36pcc4DCgJ5vIDxCFOt7--gkMnS4J2GUO7qwN" 
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">Zapatillas Nike</h2>
+                <span class="price">$50</span>
+                <i class="bx bx-shopping-bag add-cart" ></i>
+                <div class="rating-container">
+                    <input type="radio" name="rating-product1" id="star1-product1" class="rating-star">
+                    <label for="star1-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star2-product1" class="rating-star">
+                    <label for="star2-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star3-product1" class="rating-star">
+                    <label for="star3-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star4-product1" class="rating-star">
+                    <label for="star4-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star5-product1" class="rating-star">
+                    <label for="star5-product1"><i class='bx bxs-star'></i></label>
+                </div>                
+            </div>
+            <div class="product-box">
+                <img 
+                    src="https://blogger.googleusercontent.com/img/a/AVvXsEgN1O4v_1gJlyfi7IyoZM-cA1kC7YA8Dz5KBfIUi75ZGozX3gmHfX6A22FeBECj9NH1b4dozBpEG5BHa-9pEGUTkv2H4Z7cBzH8QXzBl01Fpzw2f3B_hEJ4FQSgxLPrAJQF94XZ-bmM8a_jIZsdFUDc_k8IzzdHW3X9y2QkeZSVpnfTRqvx54NXhmjNA7Up" 
+                    alt="" 
+                    class="product-img"
+                />
+                <h2 class="product-title">Poleron Blanco</h2>
+                <span class="price">$50</span>
+                <i class="bx bx-shopping-bag add-cart" ></i>
+                <div class="rating-container">
+                    <input type="radio" name="rating-product1" id="star1-product1" class="rating-star">
+                    <label for="star1-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star2-product1" class="rating-star">
+                    <label for="star2-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star3-product1" class="rating-star">
+                    <label for="star3-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star4-product1" class="rating-star">
+                    <label for="star4-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star5-product1" class="rating-star">
+                    <label for="star5-product1"><i class='bx bxs-star'></i></label>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="./js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        // Evento de clic para el botón "Pagar"
+        document.getElementById("pay-button").addEventListener("click", function() {
+            console.log("Botón de Pagar clickeado");
+            window.location.href = "Pagos.html";
+        });
+    </script>
+     <script src="https://account.snatchbot.me/script.js"></script><script>window.sntchChat.Init(385306)</script>
+     <script>
+        // Evento de clic para el botón "Pagar"
+        document.getElementById("pay-button").addEventListener("click", function() {
+            console.log("Botón de Pagar clickeado");
+            window.location.href = "Pagos.html";
+        });
+    </script> 
+</body>
+</html>

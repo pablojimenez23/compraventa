@@ -1,0 +1,22 @@
+{
+  "name": "compraventa2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express.js": "^1.0.0",
+    "nodemon": "^3.0.3",
+    "pg": "^8.11.3",
+    "stripe": "^14.17.0"
+  },
+  "devDependencies": {
+    "esm": "^3.2.25"
+  }
+}

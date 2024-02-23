@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
+    color: #444;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    width: 67%;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+}
+.left{
+    width: 25%;
+    font-weight: bold;
+}
+.left p{
+    padding: 30px 20px;
+}
+.methods{
+    padding: 10px 0;
+}
+.methods div{
+    padding: 7px 20px;
+    cursor: pointer;
+    font-size: 15px;
+}
+.methods div:hover{
+    box-shadow: 0 0 10px rgba(172, 255, 47, 0.196);
+}
+.methods div::after{
+    content:'';
+    display: inline-block;
+    color: greenyellow;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 4px 0 4px 4px;
+    border-left: var(--fondy-sucess);
+    margin-left: 10px;
+}
+.fa-solid{
+    margin-right: 10px;
+    font-size: 22px;
+    color: #aaa;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/Registro.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+</head>
+<body>
+    <form id="registerForm">
+        <section class="form-register">
+        <h4>Registro</h4>
+        <label for="nombre"></label>
+        <input type="text" placeholder="nombre"  id="nombre" required class="controls">
+        <label for="apellido"></label>
+        <input type="text"  placeholder="apellido" id="apellido" required class="controls">
+        <label for="email"></label>
+        <input type="email" placeholder="email"   id="email" required class="controls">
+        <label for="contraseña"></label>
+        <input type="password" placeholder="contraseña" id="contraseña" required class="controls">
+        <div class="checkbox-container">
+            <input type="checkbox" id="terminos" required>
+            <label for="terminos">Estoy de acuerdo con los Términos y condiciones</label>
+        </div>
+        <button type="submit" class="form-register botons">Registrar</button>
+        <p><a href="login.html">¿Ya tiene una cuenta?</p>
+        </section>
+    </form>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            
+            // Verificar si la casilla de verificación está marcada
+            const terminosCheckbox = document.getElementById('terminos');
+            if (!terminosCheckbox.checked) {
+                alert('Debe aceptar los Términos y Condiciones para registrarse.');
+                return; // Salir de la función si los términos no están aceptados
+            }
+            
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                apellido: document.getElementById('apellido').value,
+                email: document.getElementById('email').value,
+                contraseña: document.getElementById('contraseña').value
+            };
+
+            try {
+                const response = await fetch('/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (response.ok) {
+                    window.location.href = '/index.html'; // Redirige al usuario a index.html después del registro
+                } else {
+                    throw new Error('Error al registrar usuario');
+                }
+            } catch (error) {
+                console.error('Error al registrar usuario:', error);
+                alert('Error al registrar usuario. Por favor, inténtalo de nuevo.');
+            }
+        });
+    </script>
+</body>
+</html>
