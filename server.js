@@ -1,6 +1,8 @@
 const express = require('express');
 const { Pool } = require('pg');
 const path = require('path');
+const multer = require('multer');
+const fs = require('fs');
 
 const app = express();
 const PORT = 3000;
@@ -16,6 +18,9 @@ const pool = new Pool({
 
 // Middleware para parsear JSON
 app.use(express.json());
+
+// Middleware para manejar la carga de archivos con Multer
+const upload = multer({ dest: 'uploads/' });
 
 // Creación de la tabla 'users' si no existe
 async function createUsersTable() {
@@ -45,7 +50,7 @@ async function createProductsTable() {
     await client.query(`
       CREATE TABLE IF NOT EXISTS productos (
         nombre VARCHAR(100) NOT NULL,
-        precio INTEGER NOT NULL,
+        precio DECIMAL(10, 2) NOT NULL,
         tipo VARCHAR(50) NOT NULL
       )
     `);
@@ -60,10 +65,10 @@ async function createProductsTable() {
 // Llamada a la función para crear la tabla 'users' y 'productos'
 createUsersTable();
 createProductsTable();
-
-// Rutas de la aplicación
+app.get('/', (req, res) => {
+  res.redirect('/login.html');
+});
 app.use(express.static(path.join(__dirname, 'public')));
-
 // Ruta para el inicio de sesión
 app.post('/login', async (req, res) => {
     const { email, contraseña } = req.body;
