@@ -21,7 +21,6 @@
             <div class="cart">
                 <h2 class="cart-tittle">Carro</h2>
                 <div class="cart-content">
-                    <!-- Aquí no hay elementos, el carrito está vacío -->
                 </div>
                 <div class="total">
                     <div class="total-title">Total</div>
@@ -212,6 +211,9 @@
                 </div>
             </div>
         </div>
+        <footer>
+            <button id="subir-producto-button">Subir Producto</button>
+        </footer>
 
     </section>
     <script src="./js/main.js"></script>
@@ -222,14 +224,61 @@
             console.log("Botón de Pagar clickeado");
             window.location.href = "Pagos.html";
         });
-    </script>
-     <script src="https://account.snatchbot.me/script.js"></script><script>window.sntchChat.Init(385306)</script>
-     <script>
-        // Evento de clic para el botón "Pagar"
-        document.getElementById("pay-button").addEventListener("click", function() {
-            console.log("Botón de Pagar clickeado");
-            window.location.href = "Pagos.html";
+
+        // Evento de clic para el botón "Subir Producto"
+        document.getElementById("subir-producto-button").addEventListener("click", function() {
+            console.log("Botón de Subir Producto clickeado");
+            window.location.href = "subirproducto.html";
         });
-    </script> 
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const queryParams = new URLSearchParams(window.location.search);
+            const nombreUsuario = queryParams.get('nombre');
+            
+            if (nombreUsuario) {
+                // Almacena el nombre del usuario en el localStorage
+                localStorage.setItem('nombreUsuario', nombreUsuario);
+                document.getElementById('nombreUsuario').textContent = nombreUsuario;
+            } else {
+                // Si no se proporciona un nombre de usuario en la URL, intenta obtenerlo del localStorage
+                const storedName = localStorage.getItem('nombreUsuario');
+                if (storedName) {
+                    document.getElementById('nombreUsuario').textContent = storedName;
+                }
+            }
+        });
+        
+        // Función para subir un nuevo producto al contenedor de productos
+        function subirProducto(nombre, precio) {
+            const productosContainer = document.getElementById('productos-container');
+
+            // Crear un nuevo elemento div para el producto
+            const productoBox = document.createElement('div');
+            productoBox.classList.add('product-box');
+
+            // Crear la estructura interna del producto
+            productoBox.innerHTML = `
+                <img src="imagenproducto.png" alt="" class="product-img">
+                <h2 class="product-title">${nombre}</h2>
+                <span class="price">$${precio}</span>
+                <i class="bx bx-shopping-bag add-cart"></i>
+                <div class="rating-container">
+                    <input type="radio" name="rating-product1" id="star1-product1" class="rating-star">
+                    <label for="star1-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star2-product1" class="rating-star">
+                    <label for="star2-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star3-product1" class="rating-star">
+                    <label for="star3-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star4-product1" class="rating-star">
+                    <label for="star4-product1"><i class='bx bxs-star'></i></label>
+                    <input type="radio" name="rating-product1" id="star5-product1" class="rating-star">
+                    <label for="star5-product1"><i class='bx bxs-star'></i></label>
+                </div>
+            `;
+
+            // Agregar el producto al contenedor de productos
+            productosContainer.appendChild(productoBox);
+        }
+    </script>
 </body>
 </html>

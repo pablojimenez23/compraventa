@@ -115,7 +115,7 @@ function updateTotal() {
         var quantity = parseInt(quantityElement.value); // Corregir para obtener el valor numérico del input
         total += price * quantity;
     }
-    document.getElementsByClassName("total-price")[0].innerText = "$" + total;
+    document.querySelector(".total-price").innerText = "$" + total; // Actualiza el elemento con el ID "total-container"
     localStorage.setItem("cartTotal", total);
 }
 
